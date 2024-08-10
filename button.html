@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons 02</title>
+    <link rel="stylesheet" href="./button.css">
+  </head>
+  <body>
+    <button class="btn">
+      Button
+    </button>
+  </body>
+</html>
+background: linear-gradient(to right top, #000000,#4a4a4a); /* Change colors as needed */
+let preveiwContainer = document.querySelector('.products-preview');
+let previewBox = preveiwContainer.querySelectorAll('.preview');
+
+document.querySelectorAll('.products-container .product').forEach(product =>{
+  product.onclick = () =>{
+    preveiwContainer.style.display = 'flex';
+    let name = product.getAttribute('data-name');
+    previewBox.forEach(preview =>{
+      let target = preview.getAttribute('data-target');
+      if(name == target){
+        preview.classList.add('active');
+      }
+    });
+  };
+});
+
+previewBox.forEach(close =>{
+  close.querySelector('.fa-times').onclick = () =>{
+    close.classList.remove('active');
+    preveiwContainer.style.display = 'none';
+  };
+});
+
+
+css2?family
+.products-preview{
+  position: fixed;
+  top:0; left:0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.products-preview .preview{
+  display: none;
+  padding:2rem;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  margin:2rem;
+  width: 40rem;
+  border-radius: 8px;
+}
+
+.products-preview .preview.active{
+  display: inline-block;
+}
+
+.products-preview .preview img{
+  height: 36rem;
+  border-radius: 8px;
+}
+
+.products-preview .preview .fa-times{
+  position: absolute;
+  top:0rem; right:0.5rem;
+  cursor: pointer;
+  color:#000000;
+  font-size: 2rem;
+}
+
+.products-preview .preview .fa-times:hover{
+  transform: rotate(90deg);
+  color: red;
+}
+
+.products-preview .preview h3{
+  color:#444;
+  padding:.5rem 0;
+  font-size: 2.5rem;
+}
+
+.products-preview .preview p{
+  line-height: 1.5;
+  padding:1rem 0;
+  font-size: 1.6rem;
+  color:#777;
+}
+

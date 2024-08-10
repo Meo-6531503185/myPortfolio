@@ -1,0 +1,679 @@
+:root{
+  /*--primary-color:#333333;
+  --secondary-color:#d6d6d6;*/
+  
+  --primary-color:#F2F0EB;
+  --secondary-color:#0D0D0D;
+}
+.dark-mode{
+  --primary-color:#404040;
+  --secondary-color:#e0e0e0;
+}
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+body{
+  margin: 0px;
+}
+@font-face {
+    font-family: "Metropolis-Regular";
+    src: url("https://anima-uploads.s3.amazonaws.com/projects/63ad60f57bf9f04770915cde/fonts/metropolis-medium.otf")
+      format("opentype");
+}
+.Skeleton {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+    width: 100%;
+}
+.menu-bar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0D0D0D;
+    width: inherit;
+    height: 50px;
+    z-index: 2;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0px;
+  gap: 100px;
+  position: relative;
+  list-style: none;
+  color: rgba(255, 255, 255, 1);
+}
+
+.link {
+  font-family: "Inter", Helvetica;
+  text-decoration: none;
+  opacity: 0.5;
+  color: #F2F0EB;
+  font-size: 15px;
+  padding: 0.5rem;
+  position: relative;
+}
+.link:hover{
+  opacity: 1;
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #F2F0EB;
+  border-radius: 5px;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: all 0.6s ease;
+}
+
+.link:hover::before {
+  transform: scaleX(1);
+}
+.menu .link.active{
+  opacity: 1;
+}
+.logo {
+  opacity: 0.5;
+  color: #F2F0EB;
+  font-size: 25px;
+}
+.logo {
+  transition: 0.35s ease;
+}
+.logo:hover {
+  opacity: 1;
+}
+#icon{
+  font-size: 25px;
+  opacity: 0.5;
+  color: #F2F0EB;
+  cursor: pointer;
+}
+#icon {
+  transition: 0.35s ease;
+}
+#icon:hover {
+  opacity: 1;
+}
+
+.intro-photo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  gap: 70px ;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+.intro {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    position: relative;
+    top: 20px;
+}
+.photo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.drawing {
+    position: relative;
+    top: -20px;
+    width: 330px;
+    height: 465px;
+    object-fit: cover;
+}
+
+.text {
+    font-family: "Metropolis-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 50px;
+}
+.text2 {
+  font-family: "Metropolis-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-size: 35px;
+    letter-spacing: 0;
+    line-height: 50px;
+}
+
+.name {
+    position: relative;
+    width: fit-content;
+    font-family: "Major Mono Display", monospace;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-size: 95px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+  
+
+.button {
+font-family: "Metropolis-Regular", Helvetica;
+font-weight: 400;
+color: var(--secondary-color);
+font-size: 15px;
+letter-spacing: 0;
+line-height: 28px;
+background-color: transparent;
+padding: 5px 25px;
+border: 3px solid var(--secondary-color);
+border-radius: 25px;
+position: relative;
+z-index: 1;
+overflow: hidden;
+box-shadow: 6px 9px 5px 0px rgba(0, 0, 0, 0.1);transition: color 0.5s;
+}
+
+.button:hover{
+  color: var(--primary-color);
+}
+button::before{
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  width: 120%;
+  height: 220%;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+button:hover::before{
+  top: -50%;
+  left: -10%;
+}
+.button:active {
+  opacity: 0.5;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0D0D0D;
+    width: inherit;
+}
+.contact {
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ gap: 40px;
+ padding: 7px;
+}
+.box {
+display: flex;
+flex-direction: row;
+align-items: center;
+height: 35px;
+gap: 10px;
+}
+.logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+.footer-text {
+  font-family: "Inter", Helvetica;
+  text-decoration: none;
+  color: #F2F0EB;
+  font-size: 15px;
+  padding: 0.5rem;
+  position: relative;
+}
+
+@media (max-width:940px) {
+  body{
+    margin: 0px;
+  }
+  @font-face {
+      font-family: "Metropolis-Regular";
+      src: url("https://anima-uploads.s3.amazonaws.com/projects/63ad60f57bf9f04770915cde/fonts/metropolis-medium.otf")
+        format("opentype");
+  }
+  .Skeleton {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Add this line to center the content horizontally */
+      background-color: var(--primary-color);
+      gap: 90px;
+      width: 100%;
+
+  }
+  .menu-bar {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #0D0D0D;
+      width: inherit;
+      height: 50px;
+  }
+  
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0px;
+    gap: 30px;
+    position: relative;
+    list-style: none;
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  .link {
+    font-family: "Inter", Helvetica;
+    text-decoration: none;
+    color: #F2F0EB;
+    font-size: 13px;
+    padding: 0.5rem;
+    position: relative;
+  }
+  
+  .link::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #F2F0EB;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: all 0.6s ease;
+  }
+
+  .link::before {
+    bottom: 0;
+    left: 0;
+  }
+  
+  .link:hover::before {
+    transform: scaleX(1);
+  }
+  .logo {
+    color: #F2F0EB;
+    font-size: 20px;
+  }
+  .logo {
+    transition: 0.35s ease;
+  }
+  .logo:hover {
+    opacity: 1;
+  }
+  
+  .intro-photo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0px ;
+    padding-bottom: 10px;
+  }
+  .intro {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+      position: relative;
+      top: 0px;
+  }
+  .photo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .drawing {
+      position: relative;
+      top: -20px;
+      width: 210px;
+      height: 300px;
+      object-fit: cover;
+  }
+  
+  .text {
+      font-family: "Metropolis-Regular", Helvetica;
+      font-weight: 400;
+      color: var(--secondary-color);
+      font-size: 15px;
+      letter-spacing: 0;
+      line-height: 30px;
+  }
+  .text2 {
+    font-family: "Metropolis-Regular", Helvetica;
+      font-weight: 400;
+      color: var(--secondary-color);
+      font-size: 20px;
+      letter-spacing: 0;
+      line-height: 50px;
+  }
+  
+  .name {
+      position: relative;
+      width: fit-content;
+      font-family: "Major Mono Display", monospace;
+      font-weight: 400;
+      color: var(--secondary-color);
+      font-size: 60px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+  }
+    
+  .button {
+    font-family: "Metropolis-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-size: 13px;
+    letter-spacing: 0;
+    line-height: 25px;
+    background-color: transparent;
+    padding: 5px 20px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 25px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.1);transition: color 0.5s;
+    }
+    
+    .button:hover{
+      color: var(--primary-color);
+    }
+    button::before{
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 100%;
+      width: 120%;
+      height: 220%;
+      background-color: var(--secondary-color);
+      border-radius: 50%;
+      z-index: -1;
+      transition: all 0.6s ease;
+    }
+    button:hover::before{
+      top: -50%;
+      left: -10%;
+    }
+    .button:active {
+      opacity: 0.5;
+    }
+
+  .footer {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #0D0D0D;
+      width: inherit;
+  }
+  .contact {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+   padding: 7px;
+  }
+  .box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 35px;
+  gap: 5px;
+  }
+  .logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer-text {
+    font-family: "Inter", Helvetica;
+    text-decoration: none;
+    color: #F2F0EB;
+    font-size: 11px;
+    padding: 0.5rem;
+    position: relative;
+  }
+  
+}
+@media (max-width:545px) {
+  body{
+    margin: 0px;
+  }
+  @font-face {
+      font-family: "Metropolis-Regular";
+      src: url("https://anima-uploads.s3.amazonaws.com/projects/63ad60f57bf9f04770915cde/fonts/metropolis-medium.otf")
+        format("opentype");
+  }
+  .Skeleton {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Add this line to center the content horizontally */
+      background-color: var(--primary-color);
+      gap: 75px;
+      width: 100%;
+  }
+  .menu-bar {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #0D0D0D;
+      width: inherit;
+      height: 50px;
+  }
+  
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0px;
+    gap: 8px;
+    position: relative;
+    list-style: none;
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  .link {
+    font-family: "Inter", Helvetica;
+    text-decoration: none;
+    color: #F2F0EB;
+    font-size: 8px;
+    padding: 0.5rem;
+    position: relative;
+  }
+  
+  .link::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #F2F0EB;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: all 0.6s ease;
+  }
+  
+  .link::before {
+    bottom: 0;
+    left: 0;
+  }
+  
+  .link:hover::before {
+    transform: scaleX(1);
+  }
+  .logo {
+    color: #F2F0EB;
+    font-size: 15px;
+  }
+  .logo {
+    transition: 0.35s ease;
+  }
+  .logo:hover {
+    opacity: 1;
+  }
+  
+  .intro-photo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0px ;
+    padding-bottom: 5px;
+  }
+  .intro {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+      position: relative;
+      top: 0px;
+  }
+  .photo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .drawing {
+      position: relative;
+      top: -20px;
+      width: 160px;
+      height: 245px;
+      object-fit: cover;
+  }
+  
+  .text {
+      font-family: "Metropolis-Regular", Helvetica;
+      font-weight: 400;
+      color: var(--secondary-color);
+      font-size: 10px;
+      letter-spacing: 0;
+      line-height: 25px;
+  }
+  .text2 {
+    font-family: "Metropolis-Regular", Helvetica;
+      font-weight: 400;
+      color: var(--secondary-color);
+      font-size: 13px;
+      letter-spacing: 0;
+      line-height: 50px;
+  }
+  
+  .name {
+      position: relative;
+      width: fit-content;
+      font-family: "Major Mono Display", monospace;
+      font-weight: 400;
+      color: var(--secondary-color);
+      font-size: 40px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+  }
+    
+  .button {
+    font-family: "Metropolis-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 20px;
+    background-color: transparent;
+    padding: 5px 20px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 25px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.1);transition: color 0.5s;
+    }
+    
+    .button:hover{
+      color: var(--primary-color);
+    }
+    button::before{
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 100%;
+      width: 120%;
+      height: 220%;
+      background-color: var(--secondary-color);
+      border-radius: 50%;
+      z-index: -1;
+      transition: all 0.6s ease;
+    }
+    button:hover::before{
+      top: -50%;
+      left: -10%;
+    }
+  .button:active {
+    opacity: 0.5;
+  }
+  .footer {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #0D0D0D;
+      width: inherit;
+  }
+  .contact {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+   padding: 7px;
+  }
+  .box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 35px;
+  gap: 5px;
+  }
+  .logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  .footer-text {
+    font-family: "Inter", Helvetica;
+    text-decoration: none;
+    color: #F2F0EB;
+    font-size: 5px;
+    padding: 0.5rem;
+    position: relative;
+  }
+  
+}
+
+
+
+
