@@ -22,7 +22,9 @@ body{
       format("opentype");
 }
 .Skeleton {
-    align-items: center; /* Add this line to center the content horizontally */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background-color: var(--primary-color);
     width: 100%;
 }
