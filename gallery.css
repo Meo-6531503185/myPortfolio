@@ -19,7 +19,7 @@ html{
 .container{
    width: 100%;
    max-width: 1200px;
-   min-height: 100vh;
+   min-height: 90vh;
    height: 100%;
    margin:0 auto;
    padding:6rem 2rem;
