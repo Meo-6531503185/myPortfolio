@@ -1,3 +1,4 @@
+
 //selecting all required elements
 const images = document.querySelectorAll(".gallery .image");
 const filterItem = document.querySelector(".items");
